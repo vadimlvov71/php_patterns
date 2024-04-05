@@ -1,0 +1,21 @@
+{
+    "name": "php/patterns",
+    "description": "PHP programming Patterns",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Vadim Podolyan",
+            "email": "vadim.podolyan@gmail.com"
+        }
+    ],
+    
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+
+    "require": {
+        "psr/container": "^2.0"
+    }
+}
