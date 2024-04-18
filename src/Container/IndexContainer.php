@@ -1,14 +1,14 @@
 <?php
 namespace App\Container;
 
-use Psr\Container\ContainerInterface;
+
 use App\Controller\IndexController;
 use App\Repository\UserRepository;
 use App\Entity\UserEntity;
 /**
  * A psr-11 compliant container
  */
-class IndexContainer implements ContainerInterface
+class IndexContainer extends Container 
 {
 
     private array $objects = [];
@@ -23,7 +23,7 @@ class IndexContainer implements ContainerInterface
             IndexController::class => fn() => new IndexController($this->get(UserRepository::class)),
         ];
     }
-
+/*
     public function has(string $id): bool
     {
         if (!$this->has($id)) {
@@ -31,8 +31,9 @@ class IndexContainer implements ContainerInterface
         }
         return isset($this->objects[$id]);
     }
-
-    public function get(string $id): mixed
+*/
+    /*
+    public function get(string $id)
     {
        // $classReflector = new \ReflectionClass($id);
        // $constructReflector = $classReflector->getConstructor();
@@ -42,6 +43,7 @@ class IndexContainer implements ContainerInterface
           ? $this->objects[$id]() 		 // "Старый подход"
           : $this->prepareObject($id); // "Новый" подход$this->objects[$id]();
     }
+    */
     private function prepareObject(string $class): object
     {
         
